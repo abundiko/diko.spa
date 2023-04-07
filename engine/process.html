@@ -1,0 +1,22 @@
+<section>
+  <!-- put default pre loader here -->
+</section>
+<script src="./engine/settings.js"></script>
+<script>
+  const x = window.location.pathname.split(DOMAIN)[1];
+  if ("URLSearchParams" in window) {
+    fetch('./pages/'+x.split('/')[1]+VIEW_ENGINE).catch(e=>{
+      window.location.pathname = DOMAIN+'/404';
+    }).then(e=>{
+      if (e.status !== 200) return window.location.pathname = DOMAIN+'/404';
+      
+      var searchParams = new URLSearchParams(window.location.search);
+      searchParams.set("dx", x);
+      var newRelativePathQuery =
+        window.location.pathname.replace(x, "") + "?" + searchParams.toString();
+      history.replaceState(null, "", newRelativePathQuery);
+      window.location.href = window.location.href;
+    })
+    
+  }else window.location.pathname = DOMAIN+'/';
+</script>
