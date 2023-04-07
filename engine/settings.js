@@ -1,7 +1,7 @@
 /**
  * your domain path, leave as empty string after hosting
  */
-const DOMAIN = '/spa';
+const DOMAIN = '/diko.spa';
 /**
  * [Your View engine or file extension for public files (html,ejs,php)]
  */
