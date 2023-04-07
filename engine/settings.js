@@ -5,7 +5,7 @@ const DOMAIN = '/diko.spa';
 /**
  * [Your View engine or file extension for public files (html,ejs,php)]
  */
-const VIEW_ENGINE = '.php';
+const VIEW_ENGINE = '.html';
 
 /**
  * you must define all your pages here with their respective page title
